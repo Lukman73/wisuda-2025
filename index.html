@@ -22,7 +22,7 @@
       display: flex;
       align-items: center;
       position: relative;
-      z-index: 10;
+      z-index: 1000;
     }
 
     .logo {
@@ -45,7 +45,7 @@
       position: absolute;
       top: 20px;
       right: 20px;
-      z-index: 10;
+      z-index: 1000;
     }
 
     .menu-bar {
@@ -53,7 +53,7 @@
       padding: 6px 0;
       text-align: center;
       position: relative;
-      z-index: 20;
+      z-index: 9999; /* penting agar berada di atas semua */
     }
 
     .marquee-wrapper {
@@ -81,9 +81,9 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      padding: 30px 20px 20px;
+      padding: 60px 20px 20px; /* Tambah jarak dari atas agar tidak nabrak */
       position: relative;
-      z-index: 5;
+      z-index: 10;
     }
 
     .slideshow-container {
@@ -95,6 +95,7 @@
       border-radius: 10px;
       background-color: white;
       overflow: hidden;
+      z-index: 10;
     }
 
     .slides {
@@ -111,10 +112,9 @@
       padding: 15px;
       font-size: 14px;
       position: relative;
-      z-index: 10;
+      z-index: 1000;
     }
 
-    /* Bubble effect */
     #bubbles-container {
       position: fixed;
       top: 0;
@@ -122,7 +122,7 @@
       width: 100%;
       height: 100%;
       pointer-events: none;
-      z-index: 1;
+      z-index: 1; /* pastikan tidak menutupi teks */
     }
 
     .bubble {
@@ -216,7 +216,7 @@
       <img class="slides" src="foto041.jpg" alt="Foto 41" />
       <img class="slides" src="foto042.jpg" alt="Foto 42" />
       <img class="slides" src="foto043.jpg" alt="Foto 43" />
-      <!-- Tambahkan lebih banyak gambar sesuai kebutuhan -->
+      <!-- Tambah lebih banyak jika perlu -->
     </div>
   </div>
 
@@ -252,7 +252,6 @@
       bubble.style.animationDuration = `${8 + Math.random() * 4}s`;
 
       document.getElementById("bubbles-container").appendChild(bubble);
-
       setTimeout(() => bubble.remove(), 12000);
     }
 

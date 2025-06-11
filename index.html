@@ -104,4 +104,95 @@
 
     .slides {
       display: none;
-      width:
+      width: 100%;
+      height: auto;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .slideshow-container {
+        width: 95%;
+        max-width: 100%;
+        border-width: 3px;
+        margin-top: 10px;
+      }
+
+      .header-text h1 {
+        font-size: 20px;
+      }
+
+      .header-text p {
+        font-size: 14px;
+      }
+
+      .marquee-text {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="Logo UTD.png" alt="Logo Digitech University" class="logo" />
+    <div class="header-text">
+      <h1>Wisuda III - Digitech University</h1>
+      <p>" Melangkah Pasti, Menuju Peradaban Baru "</p>
+    </div>
+    <div class="audio-player">
+      <audio controls autoplay loop>
+        <source src="musik.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung audio.
+      </audio>
+    </div>
+  </header>
+
+  <div class="menu-bar">
+    <div class="marquee-wrapper">
+      <div class="marquee-text">
+        DIGITECH UNIVERSITY - Gerbang Peradaban Digital &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        Wisuda 2025 - Kebanggaan untuk Semua &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        Sukses Lulusan Digitech Membangun Negeri &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        Selamat & Sukses Para Wisudawan/i &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        Kami Bangga Padamu !
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="slideshow-container">
+      <img class="slides" src="foto01.jpg" alt="Foto 1" />
+      <img class="slides" src="foto02.jpg" alt="Foto 2" />
+      <img class="slides" src="foto03.jpg" alt="Foto 3" />
+      <img class="slides" src="foto04.jpg" alt="Foto 4" />
+      <!-- Tambahkan gambar lainnya sesuai kebutuhan -->
+    </div>
+  </div>
+
+  <footer>&copy; 2025 Digitech University</footer>
+
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      const slides = document.getElementsByClassName("slides");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000); // Ganti slide setiap 3 detik
+    }
+  </script>
+
+</body>
+</html>

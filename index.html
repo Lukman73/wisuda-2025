@@ -11,7 +11,7 @@
       font-family: 'Segoe UI', sans-serif;
       background: url('background-awan.jpg') no-repeat center center fixed;
       background-size: cover;
-      overflow: hidden;
+      overflow-x: hidden;
     }
 
     body {
@@ -64,7 +64,7 @@
       text-align: center;
       overflow: hidden;
       position: relative;
-      z-index: 100;
+      z-index: 20; /* Prioritaskan agar tampil di atas slideshow dan bubble */
     }
 
     .marquee-wrapper {
@@ -99,13 +99,14 @@
     }
 
     .slideshow-container {
-      width: 70%;
-      max-width: 900px;
+      width: 90%;
+      max-width: 800px;
       position: relative;
       border: 5px solid #ccc;
       border-radius: 10px;
       overflow: hidden;
       background-color: white;
+      z-index: 5;
     }
 
     .slides {
@@ -227,7 +228,7 @@
       <img class="slides" src="foto041.jpg" alt="Foto 41" />
       <img class="slides" src="foto042.jpg" alt="Foto 42" />
       <img class="slides" src="foto043.jpg" alt="Foto 43" />
-      <!-- Tambahkan foto lainnya sesuai kebutuhan -->
+      <!-- Tambahkan lebih banyak foto jika diperlukan -->
     </div>
   </div>
 
@@ -271,7 +272,7 @@
     }
 
     setInterval(() => {
-      if (Math.random() < 0.3) createBubble(); // Lebih jarang muncul
+      if (Math.random() < 0.3) createBubble(); // jarang muncul
     }, 800);
   </script>
 

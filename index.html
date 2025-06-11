@@ -53,7 +53,7 @@
       padding: 6px 0;
       text-align: center;
       position: relative;
-      z-index: 9999; /* penting agar berada di atas semua */
+      z-index: 9999;
     }
 
     .marquee-wrapper {
@@ -81,7 +81,7 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      padding: 60px 20px 20px; /* Tambah jarak dari atas agar tidak nabrak */
+      padding: 60px 20px 20px;
       position: relative;
       z-index: 10;
     }
@@ -122,7 +122,7 @@
       width: 100%;
       height: 100%;
       pointer-events: none;
-      z-index: 1; /* pastikan tidak menutupi teks */
+      z-index: 1;
     }
 
     .bubble {
@@ -138,6 +138,14 @@
         transform: translateY(-110vh);
         opacity: 0;
       }
+    }
+
+    /* Posisi visitor counter */
+    #visitor-counter {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      z-index: 9999;
     }
   </style>
 </head>
@@ -173,7 +181,8 @@
 
   <div class="content">
     <div class="slideshow-container">
-       <img class="slides" src="foto01.jpg" alt="Foto 1" />
+      <!-- Gambar slideshow -->
+      <img class="slides" src="foto01.jpg" alt="Foto 1" />
       <img class="slides" src="foto02.jpg" alt="Foto 2" />
       <img class="slides" src="foto03.jpg" alt="Foto 3" />
       <img class="slides" src="foto04.jpg" alt="Foto 4" />
@@ -216,11 +225,24 @@
       <img class="slides" src="foto041.jpg" alt="Foto 41" />
       <img class="slides" src="foto042.jpg" alt="Foto 42" />
       <img class="slides" src="foto043.jpg" alt="Foto 43" />
-      <!-- Tambah lebih banyak jika perlu -->
+      <!-- (dst. hingga semua foto seperti sebelumnya) -->
     </div>
   </div>
 
-  <footer>&copy; 2025 Digitech University</footer>
+  <footer>
+    &copy; 2025 Digitech University
+  </footer>
+
+  <!-- Visitor Counter -->
+  <div id="visitor-counter">
+    <div id="sfcje6tmzkj8jmd4clhk3zslf1kzhly4gt1"></div>
+    <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=je6tmzkj8jmd4clhk3zslf1kzhly4gt1&down=async" async></script>
+    <noscript>
+      <a href="https://www.freecounterstat.com" title="website counter">
+        <img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=je6tmzkj8jmd4clhk3zslf1kzhly4gt1" border="0" title="website counter" alt="website counter">
+      </a>
+    </noscript>
+  </div>
 
   <script>
     // Slideshow

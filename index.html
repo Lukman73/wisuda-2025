@@ -8,19 +8,15 @@
     html, body {
       height: 100%;
       margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('background-awan.jpg') no-repeat center center fixed;
+      background-size: cover;
+      overflow: hidden;
     }
 
     body {
       display: flex;
       flex-direction: column;
-      font-family: 'Segoe UI', sans-serif;
-      background-image: url('awan.jpg'); /* Gambar awan */
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-position: center;
-      position: relative;
-      overflow-x: hidden;
     }
 
     header {
@@ -35,8 +31,13 @@
 
     .logo {
       width: 120px;
-      height: auto;
       margin-right: 20px;
+    }
+
+    .header-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .header-text h1 {
@@ -54,6 +55,7 @@
       position: absolute;
       top: 20px;
       right: 20px;
+      z-index: 10;
     }
 
     .menu-bar {
@@ -62,7 +64,7 @@
       text-align: center;
       overflow: hidden;
       position: relative;
-      z-index: 10;
+      z-index: 100;
     }
 
     .marquee-wrapper {
@@ -78,6 +80,7 @@
       font-weight: bold;
       font-size: 14px;
       color: #000;
+      position: relative;
     }
 
     @keyframes marquee {
@@ -91,12 +94,13 @@
       justify-content: center;
       align-items: center;
       padding: 20px;
-      z-index: 10;
+      position: relative;
+      z-index: 5;
     }
 
     .slideshow-container {
-      width: 90%;
-      max-width: 800px;
+      width: 70%;
+      max-width: 900px;
       position: relative;
       border: 5px solid #ccc;
       border-radius: 10px;
@@ -117,9 +121,10 @@
       padding: 15px;
       font-size: 14px;
       z-index: 10;
+      position: relative;
     }
 
-    /* BALON SABUN */
+    /* Balon sabun */
     #bubbles-container {
       position: fixed;
       top: 0;
@@ -127,25 +132,21 @@
       width: 100%;
       height: 100%;
       pointer-events: none;
-      z-index: 1;
       overflow: hidden;
+      z-index: 1;
     }
 
     .bubble {
       position: absolute;
-      bottom: -100px;
+      bottom: 0;
       border-radius: 50%;
       opacity: 0.6;
-      animation: rise 12s linear forwards;
+      animation: float 10s linear forwards;
     }
 
-    @keyframes rise {
-      0% {
-        transform: translateY(0) scale(0.8);
-        opacity: 0.7;
-      }
-      100% {
-        transform: translateY(-120vh) scale(1.5);
+    @keyframes float {
+      to {
+        transform: translateY(-110vh);
         opacity: 0;
       }
     }
@@ -153,7 +154,6 @@
 </head>
 <body>
 
-  <!-- BALON SABUN -->
   <div id="bubbles-container"></div>
 
   <header>
@@ -184,8 +184,7 @@
 
   <div class="content">
     <div class="slideshow-container">
-      <!-- Ganti dengan nama foto sesuai kebutuhan -->
-      <img class="slides" src="foto01.jpg" alt="Foto 1" />
+       <img class="slides" src="foto01.jpg" alt="Foto 1" />
       <img class="slides" src="foto02.jpg" alt="Foto 2" />
       <img class="slides" src="foto03.jpg" alt="Foto 3" />
       <img class="slides" src="foto04.jpg" alt="Foto 4" />
@@ -228,15 +227,17 @@
       <img class="slides" src="foto041.jpg" alt="Foto 41" />
       <img class="slides" src="foto042.jpg" alt="Foto 42" />
       <img class="slides" src="foto043.jpg" alt="Foto 43" />
+      <!-- Tambahkan foto lainnya sesuai kebutuhan -->
     </div>
   </div>
 
   <footer>&copy; 2025 Digitech University</footer>
 
   <script>
-    // SLIDESHOW
+    // Slideshow
     let slideIndex = 0;
     showSlides();
+
     function showSlides() {
       const slides = document.getElementsByClassName("slides");
       for (let i = 0; i < slides.length; i++) {
@@ -248,28 +249,30 @@
       setTimeout(showSlides, 3000);
     }
 
-    // BALON SABUN
+    // Balon sabun
     function createBubble() {
       const bubble = document.createElement("div");
-      const size = Math.random() * 50 + 30; // 30-80px
+      const size = Math.random() * 60 + 40;
+      const colors = ["#ff66cc", "#66ccff", "#99ff99", "#ffcc66", "#ffffff"];
+      const color = colors[Math.floor(Math.random() * colors.length)];
+
       bubble.className = "bubble";
-      bubble.style.width = size + "px";
-      bubble.style.height = size + "px";
-      bubble.style.left = Math.random() * 100 + "vw";
-      bubble.style.background = `radial-gradient(circle at 30% 30%, ${randomColor()}, white)`;
+      bubble.style.width = `${size}px`;
+      bubble.style.height = `${size}px`;
+      bubble.style.left = `${Math.random() * 100}%`;
+      bubble.style.background = color;
+      bubble.style.animationDuration = `${8 + Math.random() * 5}s`;
+
       document.getElementById("bubbles-container").appendChild(bubble);
 
-      setTimeout(() => bubble.remove(), 12000);
-    }
-
-    function randomColor() {
-      const colors = ['#ff69b4', '#87cefa', '#98fb98', '#dda0dd', '#f0e68c', '#00ffff'];
-      return colors[Math.floor(Math.random() * colors.length)];
+      setTimeout(() => {
+        bubble.remove();
+      }, 12000);
     }
 
     setInterval(() => {
-      if (Math.random() > 0.6) createBubble(); // Muncul lebih jarang
-    }, 700);
+      if (Math.random() < 0.3) createBubble(); // Lebih jarang muncul
+    }, 800);
   </script>
 
 </body>

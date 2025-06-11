@@ -5,8 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Wisuda III - Digitech University</title>
   <style>
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
       font-family: 'Segoe UI', sans-serif;
       background-color: #f4f4f4;
     }
@@ -17,7 +23,6 @@
       padding: 20px;
       display: flex;
       align-items: center;
-      position: relative;
     }
 
     .logo {
@@ -43,31 +48,25 @@
       font-size: 16px;
     }
 
-    .music-button {
+    .audio-player {
       position: absolute;
       top: 20px;
       right: 20px;
+      z-index: 1000;
     }
 
-    .music-button button {
-      padding: 8px 14px;
-      font-size: 14px;
-      background-color: #ffffff;
-      color: #003366;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .music-button button:hover {
-      background-color: #cccccc;
+    .content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
     }
 
     .slideshow-container {
-      max-width: 800px;
+      width: 70%;
+      max-width: 900px;
       position: relative;
-      margin: 30px auto;
       border: 5px solid #ccc;
       border-radius: 10px;
       overflow: hidden;
@@ -85,9 +84,6 @@
       color: white;
       text-align: center;
       padding: 15px;
-      position: fixed;
-      width: 100%;
-      bottom: 0;
       font-size: 14px;
     }
   </style>
@@ -100,33 +96,31 @@
       <h1>Wisuda III - Digitech University</h1>
       <p>"Melangkah Pasti, Menuju Peradaban Baru"</p>
     </div>
-    <div class="music-button">
-      <button onclick="document.getElementById('musik').play()">Mainkan Musik</button>
+    <div class="audio-player">
+      <audio controls autoplay loop>
+        <source src="musik.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung audio.
+      </audio>
     </div>
   </header>
 
-  <div class="slideshow-container">
-    <img class="slides" src="Foto01.jpg" alt="Foto 1" />
-    <img class="slides" src="Foto02.jpg" alt="Foto 2" />
-    <img class="slides" src="Foto03.jpg" alt="Foto 3" />
-    <img class="slides" src="Foto04.jpg" alt="Foto 4" />
-    <img class="slides" src="Foto05.jpg" alt="Foto 5" />
-    <img class="slides" src="Foto06.jpg" alt="Foto 6" />
-    <img class="slides" src="Foto7.jpg" alt="Foto 7" />
-    <img class="slides" src="Foto08.jpg" alt="Foto 8" />
-    <img class="slides" src="Foto09.jpg" alt="Foto 9" />
-    <img class="slides" src="Foto010.jpg" alt="Foto 10" />
-    <img class="slides" src="Foto011.jpg" alt="Foto 11" />
+  <div class="content">
+    <div class="slideshow-container">
+      <img class="slides" src="Foto01.jpg" alt="Foto 1" />
+      <img class="slides" src="Foto02.jpg" alt="Foto 2" />
+      <img class="slides" src="Foto03.jpg" alt="Foto 3" />
+      <img class="slides" src="Foto04.jpg" alt="Foto 4" />
+      <img class="slides" src="Foto05.jpg" alt="Foto 5" />
+      <img class="slides" src="Foto06.jpg" alt="Foto 6" />
+      <img class="slides" src="Foto7.jpg" alt="Foto 7" />
+      <img class="slides" src="Foto08.jpg" alt="Foto 8" />
+      <img class="slides" src="Foto09.jpg" alt="Foto 9" />
+      <img class="slides" src="Foto010.jpg" alt="Foto 10" />
+      <img class="slides" src="Foto011.jpg" alt="Foto 11" />
+    </div>
   </div>
 
-  <audio id="musik" loop>
-    <source src="musik.mp3" type="audio/mpeg" />
-    Browser Anda tidak mendukung elemen audio.
-  </audio>
-
-  <footer>
-    &copy; 2025
-  </footer>
+  <footer>&copy; 2025 Digitech University</footer>
 
   <script>
     let slideIndex = 0;

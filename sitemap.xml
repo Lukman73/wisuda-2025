@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://lukman73.github.io/wisuda-2025/</loc>
+    <lastmod>2025-06-11</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <!-- Daftar gambar yang ingin dikenali Google -->
+  <url>
+    <loc>https://lukman73.github.io/wisuda-2025/foto01.jpg</loc>
+  </url>
+  <url>
+    <loc>https://lukman73.github.io/wisuda-2025/foto02.jpg</loc>
+  </url>
+  <url>
+    <loc>https://lukman73.github.io/wisuda-2025/foto03.jpg</loc>
+  </url>
+  <!-- Tambahkan semua gambar lainnya di sini -->
+</urlset>

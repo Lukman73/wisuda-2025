@@ -6,17 +6,13 @@
   <title>Wisuda III - Digitech University</title>
   <style>
     html, body {
-      height: 100%;
       margin: 0;
+      padding: 0;
+      height: 100%;
       font-family: 'Segoe UI', sans-serif;
       background: url('background-awan.jpg') no-repeat center center fixed;
       background-size: cover;
       overflow-x: hidden;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
     }
 
     header {
@@ -30,25 +26,19 @@
     }
 
     .logo {
-      width: 120px;
-      margin-right: 20px;
-    }
-
-    .header-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      width: 100px;
+      margin-right: 15px;
     }
 
     .header-text h1 {
       margin: 0;
-      font-size: 28px;
+      font-size: 24px;
     }
 
     .header-text p {
-      margin: 5px 0 0 0;
+      margin: 4px 0 0 0;
       font-style: italic;
-      font-size: 16px;
+      font-size: 14px;
     }
 
     .audio-player {
@@ -62,15 +52,14 @@
       background-color: #ffcc00;
       padding: 6px 0;
       text-align: center;
-      overflow: hidden;
       position: relative;
-      z-index: 20; /* Prioritaskan agar tampil di atas slideshow dan bubble */
+      z-index: 20;
     }
 
     .marquee-wrapper {
       overflow: hidden;
-      position: relative;
       height: 24px;
+      position: relative;
     }
 
     .marquee-text {
@@ -80,7 +69,6 @@
       font-weight: bold;
       font-size: 14px;
       color: #000;
-      position: relative;
     }
 
     @keyframes marquee {
@@ -92,27 +80,28 @@
       flex: 1;
       display: flex;
       justify-content: center;
-      align-items: center;
-      padding: 20px;
+      align-items: flex-start;
+      padding: 30px 20px 20px;
       position: relative;
       z-index: 5;
     }
 
     .slideshow-container {
-      width: 90%;
-      max-width: 800px;
+      width: 80%;
+      max-width: 700px;
+      height: 400px;
       position: relative;
       border: 5px solid #ccc;
       border-radius: 10px;
-      overflow: hidden;
       background-color: white;
-      z-index: 5;
+      overflow: hidden;
     }
 
     .slides {
       display: none;
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
     }
 
     footer {
@@ -121,11 +110,11 @@
       text-align: center;
       padding: 15px;
       font-size: 14px;
-      z-index: 10;
       position: relative;
+      z-index: 10;
     }
 
-    /* Balon sabun */
+    /* Bubble effect */
     #bubbles-container {
       position: fixed;
       top: 0;
@@ -133,7 +122,6 @@
       width: 100%;
       height: 100%;
       pointer-events: none;
-      overflow: hidden;
       z-index: 1;
     }
 
@@ -141,7 +129,7 @@
       position: absolute;
       bottom: 0;
       border-radius: 50%;
-      opacity: 0.6;
+      opacity: 0.5;
       animation: float 10s linear forwards;
     }
 
@@ -228,7 +216,7 @@
       <img class="slides" src="foto041.jpg" alt="Foto 41" />
       <img class="slides" src="foto042.jpg" alt="Foto 42" />
       <img class="slides" src="foto043.jpg" alt="Foto 43" />
-      <!-- Tambahkan lebih banyak foto jika diperlukan -->
+      <!-- Tambahkan lebih banyak gambar sesuai kebutuhan -->
     </div>
   </div>
 
@@ -237,8 +225,6 @@
   <script>
     // Slideshow
     let slideIndex = 0;
-    showSlides();
-
     function showSlides() {
       const slides = document.getElementsByClassName("slides");
       for (let i = 0; i < slides.length; i++) {
@@ -249,8 +235,9 @@
       slides[slideIndex - 1].style.display = "block";
       setTimeout(showSlides, 3000);
     }
+    showSlides();
 
-    // Balon sabun
+    // Bubble animation
     function createBubble() {
       const bubble = document.createElement("div");
       const size = Math.random() * 60 + 40;
@@ -262,18 +249,16 @@
       bubble.style.height = `${size}px`;
       bubble.style.left = `${Math.random() * 100}%`;
       bubble.style.background = color;
-      bubble.style.animationDuration = `${8 + Math.random() * 5}s`;
+      bubble.style.animationDuration = `${8 + Math.random() * 4}s`;
 
       document.getElementById("bubbles-container").appendChild(bubble);
 
-      setTimeout(() => {
-        bubble.remove();
-      }, 12000);
+      setTimeout(() => bubble.remove(), 12000);
     }
 
     setInterval(() => {
-      if (Math.random() < 0.3) createBubble(); // jarang muncul
-    }, 800);
+      if (Math.random() < 0.3) createBubble();
+    }, 1000);
   </script>
 
 </body>

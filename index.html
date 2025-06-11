@@ -17,6 +17,7 @@
       padding: 20px;
       display: flex;
       align-items: center;
+      position: relative;
     }
 
     .logo {
@@ -42,8 +43,29 @@
       font-size: 16px;
     }
 
+    .music-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .music-button button {
+      padding: 8px 14px;
+      font-size: 14px;
+      background-color: #ffffff;
+      color: #003366;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .music-button button:hover {
+      background-color: #cccccc;
+    }
+
     .slideshow-container {
-      max-width: 1000px; /* Dibuat lebih besar */
+      max-width: 800px;
       position: relative;
       margin: 30px auto;
       border: 5px solid #ccc;
@@ -78,6 +100,9 @@
       <h1>Wisuda III - Digitech University</h1>
       <p>"Melangkah Pasti, Menuju Peradaban Baru"</p>
     </div>
+    <div class="music-button">
+      <button onclick="document.getElementById('musik').play()">Mainkan Musik</button>
+    </div>
   </header>
 
   <div class="slideshow-container">
@@ -93,6 +118,11 @@
     <img class="slides" src="Foto010.jpg" alt="Foto 10" />
     <img class="slides" src="Foto011.jpg" alt="Foto 11" />
   </div>
+
+  <audio id="musik" loop>
+    <source src="musik.mp3" type="audio/mpeg" />
+    Browser Anda tidak mendukung elemen audio.
+  </audio>
 
   <footer>
     &copy; 2025

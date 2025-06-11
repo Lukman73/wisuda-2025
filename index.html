@@ -58,28 +58,29 @@
 
     .menu-bar {
       background-color: #ffcc00;
-      padding: 8px;
-      overflow: hidden;
-      white-space: nowrap;
+      padding: 8px 0;
     }
 
     .marquee-wrapper {
       overflow: hidden;
       position: relative;
       height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .marquee-text {
       display: inline-block;
       white-space: nowrap;
-      padding-left: 100%;
       animation: marquee 30s linear infinite;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 14px;
+      color: #000;
     }
 
     @keyframes marquee {
-      0% { transform: translateX(0); }
+      0% { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
     }
 
@@ -133,7 +134,7 @@
       }
 
       .marquee-text {
-        font-size: 14px;
+        font-size: 12px;
       }
     }
   </style>
@@ -190,7 +191,7 @@
       slideIndex++;
       if (slideIndex > slides.length) slideIndex = 1;
       slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlides, 3000); // Ganti slide setiap 3 detik
+      setTimeout(showSlides, 3000);
     }
   </script>
 

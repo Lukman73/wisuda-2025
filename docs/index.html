@@ -6,15 +6,11 @@
   <title>Wisuda III - Digitech University</title>
   <style>
     html, body {
+      height: 100%;
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background-color: #f4f4f4;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      overflow-y: auto; /* Aktifkan scroll vertikal */
     }
 
     header {
@@ -88,13 +84,14 @@
     .content {
       display: flex;
       justify-content: center;
+      align-items: center;
       padding: 20px;
-      flex-wrap: wrap;
     }
 
     .slideshow-container {
       width: 100%;
       max-width: 900px;
+      height: 400px; /* Ukuran lebih kecil */
       position: relative;
       border: 5px solid #ccc;
       border-radius: 10px;
@@ -105,9 +102,9 @@
 
     .slides {
       width: 100%;
-      height: auto;
+      height: 100%;
       display: none;
-      object-fit: contain;
+      object-fit: contain; /* Jaga proporsional foto */
     }
 
     footer {
@@ -186,8 +183,6 @@
 
   <div class="content">
     <div class="slideshow-container">
-      <!-- Semua gambar tetap sama seperti sebelumnya -->
-      <!-- Contoh 3 gambar saja agar ringkas -->
       <img class="slides" src="foto01.jpg" alt="Foto 1" />
       <img class="slides" src="foto02.jpg" alt="Foto 2" />
       <img class="slides" src="foto03.jpg" alt="Foto 3" />
@@ -233,7 +228,6 @@
       <img class="slides" src="foto043.jpg" alt="Foto 43" />
       <img class="slides" src="foto044.jpg" alt="Foto 44" />
       <img class="slides" src="foto045.jpg" alt="Foto 45" />
-      <!-- Tambahkan kembali gambar lainnya di sini -->
     </div>
   </div>
 
@@ -254,7 +248,7 @@
       setTimeout(showSlides, 3000);
     }
 
-    // Balon besar
+    // Balon besar & lambat
     function createBalloon() {
       const balloon = document.createElement('div');
       balloon.classList.add('balloon');

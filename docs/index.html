@@ -9,7 +9,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #c0c0c0; /* Background abu-abu medium */
+      background-color: #e0e0e0; /* abu-abu lembut */
       overflow-x: hidden;
     }
 
@@ -144,7 +144,7 @@
     .balloon {
       position: fixed;
       bottom: -200px;
-      border-radius: 50% 50% 50% 50%;
+      border-radius: 50%;
       background-color: red;
       opacity: 0.6;
       z-index: 0;
@@ -156,6 +156,21 @@
         transform: translateY(-150vh);
         opacity: 0;
       }
+    }
+
+    .logo-kanan-bawah {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 100px;
+      opacity: 0.8;
+      z-index: 50;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-kanan-bawah:hover {
+      transform: scale(1.1);
+      opacity: 1;
     }
   </style>
 </head>
@@ -189,7 +204,6 @@
 
   <div class="content">
     <div class="slideshow-container">
-      <!-- Ganti/isi dengan semua gambar -->
       <img class="slides" src="foto01.jpg" alt="Foto 1" />
       <img class="slides" src="foto02.jpg" alt="Foto 2" />
       <img class="slides" src="foto03.jpg" alt="Foto 3" />
@@ -235,18 +249,19 @@
       <img class="slides" src="foto043.jpg" alt="Foto 43" />
       <img class="slides" src="foto044.jpg" alt="Foto 44" />
       <img class="slides" src="foto045.jpg" alt="Foto 45" />
-      <!-- Lanjutkan hingga foto045.jpg -->
-      <img class="slides" src="foto045.jpg" alt="Foto 45" />
     </div>
   </div>
 
-  <footer>&copy; 2025</footer>
+  <footer>&copy; 2025 Digitech University</footer>
+
+  <!-- Logo kanan bawah -->
+  <img src="let.png" alt="Logo Tambahan" class="logo-kanan-bawah" />
 
   <!-- Suara letusan -->
   <audio id="popSound" src="pop.mp3" preload="auto"></audio>
 
   <script>
-    // Slideshow otomatis
+    // Slideshow
     let slideIndex = 0;
     showSlides();
     function showSlides() {
@@ -260,7 +275,7 @@
       setTimeout(showSlides, 3000);
     }
 
-    // Efek balon naik
+    // Balon naik
     function createBalloon() {
       const balloon = document.createElement('div');
       balloon.classList.add('balloon');
@@ -281,15 +296,17 @@
 
     const balloonInterval = setInterval(createBalloon, 700);
 
-    // Balon meletus satu per satu setelah 1 menit
+    // Balon meletus setelah 1 menit
     setTimeout(() => {
       const balloons = Array.from(document.querySelectorAll('.balloon'));
       let index = 0;
+
       const burstInterval = setInterval(() => {
         if (index >= balloons.length) {
           clearInterval(burstInterval);
           return;
         }
+
         const balloon = balloons[index];
         if (balloon) {
           balloon.style.transition = 'transform 0.3s ease-out, opacity 0.3s ease-out';
@@ -299,10 +316,10 @@
             if (balloon.parentNode) balloon.remove();
           }, 300);
 
-          // Mainkan suara letusan
           const pop = document.getElementById("popSound");
           if (pop) pop.play();
         }
+
         index++;
       }, 1000);
     }, 60000);

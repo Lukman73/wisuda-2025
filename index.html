@@ -11,23 +11,13 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
+      min-height: 100%;
       font-family: 'Segoe UI', sans-serif;
       background: url('awan.jpg') no-repeat center center fixed;
       background-size: cover;
       overflow-x: hidden;
-    }
-
-    body {
       display: flex;
       flex-direction: column;
-    }
-
-    .wrapper {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      flex: 1;
     }
 
     header {
@@ -95,16 +85,16 @@
       flex: 1;
       display: flex;
       justify-content: center;
-      align-items: flex-start;
-      padding: 60px 20px 20px;
+      align-items: center;
+      padding: 40px 20px 20px;
       position: relative;
       z-index: 10;
     }
 
     .slideshow-container {
-      width: 80%;
-      max-width: 700px;
-      height: 400px;
+      width: 90%;
+      max-width: 900px;
+      aspect-ratio: 16 / 9;
       position: relative;
       border: 5px solid #ccc;
       border-radius: 10px;
@@ -126,7 +116,6 @@
       text-align: center;
       padding: 15px;
       font-size: 14px;
-      position: relative;
       z-index: 1000;
     }
 
@@ -164,40 +153,38 @@
   </style>
 </head>
 <body>
+
   <div id="bubbles-container"></div>
 
-  <div class="wrapper">
-    <header>
-      <img src="Logo UTD.png" alt="Logo Digitech University" class="logo" />
-      <div class="header-text">
-        <h1>Wisuda III - Digitech University</h1>
-        <p>" Melangkah Pasti, Menuju Peradaban Baru "</p>
-      </div>
-      <div class="audio-player">
-        <audio controls autoplay loop>
-          <source src="musik.mp3" type="audio/mpeg">
-          Browser Anda tidak mendukung audio.
-        </audio>
-      </div>
-    </header>
+  <header>
+    <img src="Logo UTD.png" alt="Logo Digitech University" class="logo" />
+    <div class="header-text">
+      <h1>Wisuda III - Digitech University</h1>
+      <p>" Melangkah Pasti, Menuju Peradaban Baru "</p>
+    </div>
+    <div class="audio-player">
+      <audio controls autoplay loop>
+        <source src="musik.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung audio.
+      </audio>
+    </div>
+  </header>
 
-    <div class="menu-bar">
-      <div class="marquee-wrapper">
-        <div class="marquee-text">
-          DIGITECH UNIVERSITY - Gerbang Peradaban Digital &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-          Wisuda 2025 - Kebanggaan untuk Semua &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-          Sukses Lulusan Digitech Membangun Negeri &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-          Selamat & Sukses Para Wisudawan/i &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-          Kami Bangga Padamu !
-        </div>
+  <div class="menu-bar">
+    <div class="marquee-wrapper">
+      <div class="marquee-text">
+        DIGITECH UNIVERSITY - Gerbang Peradaban Digital &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        Wisuda 2025 - Kebanggaan untuk Semua &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        Sukses Lulusan Digitech Membangun Negeri &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        Selamat & Sukses Para Wisudawan/i &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        Kami Bangga Padamu !
       </div>
     </div>
+  </div>
 
-    <div class="content">
-      <div class="slideshow-container">
-        <!-- Gambar slideshow -->
-        <!-- (Semua <img class="slides"> tetap seperti yang kamu tulis sebelumnya) -->
-        <img class="slides" src="foto01.jpg" alt="Foto 1" />
+  <div class="content">
+    <div class="slideshow-container">
+      <img class="slides" src="foto01.jpg" alt="Foto 1" />
       <img class="slides" src="foto02.jpg" alt="Foto 2" />
       <img class="slides" src="foto03.jpg" alt="Foto 3" />
       <img class="slides" src="foto04.jpg" alt="Foto 4" />
@@ -242,14 +229,13 @@
       <img class="slides" src="foto043.jpg" alt="Foto 43" />
       <img class="slides" src="foto044.jpg" alt="Foto 44" />
       <img class="slides" src="foto045.jpg" alt="Foto 45" />
-        <!-- dst... -->
-      </div>
+      <!-- Tambahkan gambar lain sesuai kebutuhan -->
     </div>
-
-    <footer>
-      &copy; 2025 Digitech University
-    </footer>
   </div>
+
+  <footer>
+    &copy; 2025 Digitech University
+  </footer>
 
   <!-- Visitor Counter -->
   <div id="visitor-counter">
@@ -299,5 +285,6 @@
       if (Math.random() < 0.3) createBubble();
     }, 1000);
   </script>
+
 </body>
 </html>

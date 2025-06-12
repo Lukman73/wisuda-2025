@@ -140,22 +140,20 @@
       }
     }
 
-    /* Balon terbang */
+    /* Balon besar */
     .balloon {
       position: fixed;
-      bottom: -150px;
-      width: 60px;
-      height: 80px;
+      bottom: -200px;
       border-radius: 50% 50% 50% 50%;
       background-color: red;
-      opacity: 0.7;
+      opacity: 0.6;
       z-index: 0;
       animation: floatUp linear forwards;
     }
 
     @keyframes floatUp {
       to {
-        transform: translateY(-130vh);
+        transform: translateY(-150vh);
         opacity: 0;
       }
     }
@@ -256,18 +254,18 @@
       setTimeout(showSlides, 3000);
     }
 
-    // Balon
+    // Balon besar & lambat
     function createBalloon() {
       const balloon = document.createElement('div');
       balloon.classList.add('balloon');
-      const size = Math.random() * 40 + 60; // Ukuran lebih besar
+      const size = Math.random() * 80 + 120; // Ukuran 120 - 200 px
       balloon.style.width = `${size}px`;
       balloon.style.height = `${size * 1.3}px`;
       balloon.style.left = `${Math.random() * 100}%`;
       balloon.style.backgroundColor = getRandomColor();
-      balloon.style.animationDuration = `${Math.random() * 3 + 4}s`;
+      balloon.style.animationDuration = `${Math.random() * 6 + 8}s`; // Gerak lambat (8–14s)
       document.body.appendChild(balloon);
-      setTimeout(() => balloon.remove(), 10000);
+      setTimeout(() => balloon.remove(), 15000);
     }
 
     function getRandomColor() {
@@ -275,7 +273,7 @@
       return colors[Math.floor(Math.random() * colors.length)];
     }
 
-    setInterval(createBalloon, 500);
+    setInterval(createBalloon, 700); // Kurangi frekuensinya agar tidak terlalu ramai
   </script>
 
 </body>

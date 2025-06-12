@@ -18,6 +18,18 @@
       overflow-x: hidden;
     }
 
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      flex: 1;
+    }
+
     header {
       background-color: #003366cc;
       color: white;
@@ -143,7 +155,6 @@
       }
     }
 
-    /* Posisi visitor counter */
     #visitor-counter {
       position: fixed;
       bottom: 10px;
@@ -153,39 +164,40 @@
   </style>
 </head>
 <body>
-
   <div id="bubbles-container"></div>
 
-  <header>
-    <img src="Logo UTD.png" alt="Logo Digitech University" class="logo" />
-    <div class="header-text">
-      <h1>Wisuda III - Digitech University</h1>
-      <p>" Melangkah Pasti, Menuju Peradaban Baru "</p>
-    </div>
-    <div class="audio-player">
-      <audio controls autoplay loop>
-        <source src="musik.mp3" type="audio/mpeg">
-        Browser Anda tidak mendukung audio.
-      </audio>
-    </div>
-  </header>
+  <div class="wrapper">
+    <header>
+      <img src="Logo UTD.png" alt="Logo Digitech University" class="logo" />
+      <div class="header-text">
+        <h1>Wisuda III - Digitech University</h1>
+        <p>" Melangkah Pasti, Menuju Peradaban Baru "</p>
+      </div>
+      <div class="audio-player">
+        <audio controls autoplay loop>
+          <source src="musik.mp3" type="audio/mpeg">
+          Browser Anda tidak mendukung audio.
+        </audio>
+      </div>
+    </header>
 
-  <div class="menu-bar">
-    <div class="marquee-wrapper">
-      <div class="marquee-text">
-        DIGITECH UNIVERSITY - Gerbang Peradaban Digital &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-        Wisuda 2025 - Kebanggaan untuk Semua &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-        Sukses Lulusan Digitech Membangun Negeri &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-        Selamat & Sukses Para Wisudawan/i &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-        Kami Bangga Padamu !
+    <div class="menu-bar">
+      <div class="marquee-wrapper">
+        <div class="marquee-text">
+          DIGITECH UNIVERSITY - Gerbang Peradaban Digital &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+          Wisuda 2025 - Kebanggaan untuk Semua &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+          Sukses Lulusan Digitech Membangun Negeri &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+          Selamat & Sukses Para Wisudawan/i &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+          Kami Bangga Padamu !
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="content">
-    <div class="slideshow-container">
-      <!-- Gambar slideshow -->
-      <img class="slides" src="foto01.jpg" alt="Foto 1" />
+    <div class="content">
+      <div class="slideshow-container">
+        <!-- Gambar slideshow -->
+        <!-- (Semua <img class="slides"> tetap seperti yang kamu tulis sebelumnya) -->
+        <img class="slides" src="foto01.jpg" alt="Foto 1" />
       <img class="slides" src="foto02.jpg" alt="Foto 2" />
       <img class="slides" src="foto03.jpg" alt="Foto 3" />
       <img class="slides" src="foto04.jpg" alt="Foto 4" />
@@ -230,13 +242,14 @@
       <img class="slides" src="foto043.jpg" alt="Foto 43" />
       <img class="slides" src="foto044.jpg" alt="Foto 44" />
       <img class="slides" src="foto045.jpg" alt="Foto 45" />
-      <!-- (dst. hingga semua foto seperti sebelumnya) -->
+        <!-- dst... -->
+      </div>
     </div>
-  </div>
 
-  <footer>
-    &copy; 2025 Digitech University
-  </footer>
+    <footer>
+      &copy; 2025 Digitech University
+    </footer>
+  </div>
 
   <!-- Visitor Counter -->
   <div id="visitor-counter">
@@ -286,6 +299,5 @@
       if (Math.random() < 0.3) createBubble();
     }, 1000);
   </script>
-
 </body>
 </html>

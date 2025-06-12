@@ -2,137 +2,172 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Wisuda III - Digitech University</title>
   <style>
     html, body {
       height: 100%;
       margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
+    }
+
+    body {
       display: flex;
       flex-direction: column;
-      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
-      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
     }
 
     header {
-      background-color: #1c4e80;
+      background-color: #003366;
       color: white;
-      padding: 10px 20px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 1.5em;
+    .logo {
+      width: 120px;
+      height: auto;
+      margin-right: 20px;
     }
 
-    header p {
+    .header-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .header-text h1 {
       margin: 0;
-      font-size: 0.95em;
+      font-size: 28px;
+    }
+
+    .header-text p {
+      margin: 5px 0 0 0;
       font-style: italic;
+      font-size: 16px;
     }
 
-    .banner {
-      background-color: #fcd116;
-      color: black;
-      text-align: center;
-      padding: 8px;
-      font-weight: bold;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    .audio-player {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
     }
 
     .content {
-      flex-grow: 1;
+      flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 40px 20px 20px;
-      position: relative;
-      z-index: 10;
+      padding: 20px;
     }
 
     .slideshow-container {
-      max-width: 100%;
-      width: 90vw;
-      max-height: 90vh;
-      aspect-ratio: 16/9;
-      overflow: hidden;
+      width: 70%;
+      max-width: 900px;
+      position: relative;
+      border: 5px solid #ccc;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      overflow: hidden;
+      background-color: white;
     }
 
-    .slideshow-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .slides {
       display: none;
-    }
-
-    .slideshow-container img.active {
-      display: block;
+      width: 100%;
+      height: auto;
     }
 
     footer {
-      background-color: #1c4e80;
+      background-color: #003366;
       color: white;
       text-align: center;
-      padding: 10px 0;
-      font-size: 0.9em;
-    }
-
-    audio {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      z-index: 999;
+      padding: 15px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Wisuda III - Digitech University</h1>
-    <p><em>"Melangkah Pasti, Menuju Peradaban Baru"</em></p>
+    <img src="Logo UTD.png" alt="Logo Digitech University" class="logo" />
+    <div class="header-text">
+      <h1>Wisuda III - Digitech University</h1>
+      <p>"Melangkah Pasti, Menuju Peradaban Baru"</p>
+    </div>
+    <div class="audio-player">
+      <audio controls autoplay loop>
+        <source src="musik.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung audio.
+      </audio>
+    </div>
   </header>
-
-  <div class="banner">
-    Selamat & Sukses Lulusan Digitech Membangun Negeri | Selamat & Sukses Para Wisudawan/i | Kami Bangga Padamu !
-  </div>
-
-  <audio controls autoplay loop>
-    <source src="audio/lagu-wisuda.mp3" type="audio/mpeg">
-    Browser Anda tidak mendukung elemen audio.
-  </audio>
 
   <div class="content">
     <div class="slideshow-container">
-      <img src="images/wisuda1.jpg" class="active" alt="Foto 1" />
-      <img src="images/wisuda2.jpg" alt="Foto 2" />
-      <img src="images/wisuda3.jpg" alt="Foto 3" />
+      <img class="slides" src="foto01.jpg" alt="Foto 1" />
+      <img class="slides" src="foto02.jpg" alt="Foto 2" />
+      <img class="slides" src="foto03.jpg" alt="Foto 3" />
+      <img class="slides" src="foto04.jpg" alt="Foto 4" />
+      <img class="slides" src="foto05.jpg" alt="Foto 5" />
+      <img class="slides" src="foto06.jpg" alt="Foto 6" />
+      <img class="slides" src="foto07.jpg" alt="Foto 7" />
+      <img class="slides" src="foto08.jpg" alt="Foto 8" />
+      <img class="slides" src="foto09.jpg" alt="Foto 9" />
+      <img class="slides" src="foto010.jpg" alt="Foto 10" />
+      <img class="slides" src="foto011.jpg" alt="Foto 11" />
+      <img class="slides" src="foto012.jpg" alt="Foto 12" />
+      <img class="slides" src="foto013.jpg" alt="Foto 13" />
+      <img class="slides" src="foto014.jpg" alt="Foto 14" />
+      <img class="slides" src="foto015.jpg" alt="Foto 15" />
+      <img class="slides" src="foto016.jpg" alt="Foto 16" />
+      <img class="slides" src="foto017.jpg" alt="Foto 17" />
+      <img class="slides" src="foto018.jpg" alt="Foto 18" />
+      <img class="slides" src="foto019.jpg" alt="Foto 19" />
+      <img class="slides" src="foto020.jpg" alt="Foto 20" />
+      <img class="slides" src="foto021.jpg" alt="Foto 21" />
+      <img class="slides" src="foto022.jpg" alt="Foto 22" />
+      <img class="slides" src="foto023.jpg" alt="Foto 23" />
+      <img class="slides" src="foto024.jpg" alt="Foto 24" />
+      <img class="slides" src="foto025.jpg" alt="Foto 25" />
+      <img class="slides" src="foto026.jpg" alt="Foto 26" />
+      <img class="slides" src="foto027.jpg" alt="Foto 27" />
+      <img class="slides" src="foto028.jpg" alt="Foto 28" />
+      <img class="slides" src="foto029.jpg" alt="Foto 29" />
+      <img class="slides" src="foto030.jpg" alt="Foto 30" />
+      <img class="slides" src="foto031.jpg" alt="Foto 31" />
+      <img class="slides" src="foto032.jpg" alt="Foto 32" />
+      <img class="slides" src="foto033.jpg" alt="Foto 33" />
+      <img class="slides" src="foto034.jpg" alt="Foto 34" />
+      <img class="slides" src="foto035.jpg" alt="Foto 35" />
+      <img class="slides" src="foto036.jpg" alt="Foto 36" />
+      <img class="slides" src="foto037.jpg" alt="Foto 37" />
+      <img class="slides" src="foto038.jpg" alt="Foto 38" />
+      <img class="slides" src="foto039.jpg" alt="Foto 39" />
+      <img class="slides" src="foto040.jpg" alt="Foto 40" />
+      <img class="slides" src="foto041.jpg" alt="Foto 41" />
+      <img class="slides" src="foto042.jpg" alt="Foto 42" />
+      <img class="slides" src="foto043.jpg" alt="Foto 43" />
     </div>
   </div>
 
-  <footer>
-    &copy; 2025 Digitech University
-  </footer>
+  <footer>&copy; 2025 Digitech University</footer>
 
   <script>
-    const slides = document.querySelectorAll(".slideshow-container img");
-    let current = 0;
+    let slideIndex = 0;
+    showSlides();
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle("active", i === index);
-      });
+    function showSlides() {
+      const slides = document.getElementsByClassName("slides");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000);
     }
-
-    setInterval(() => {
-      current = (current + 1) % slides.length;
-      showSlide(current);
-    }, 3000);
   </script>
 
 </body>

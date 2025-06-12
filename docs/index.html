@@ -3,15 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Wisuda III Digitech University tahun 2025. Dokumentasi dan galeri foto kenangan momen istimewa para wisudawan.">
-  <meta name="keywords" content="Wisuda Digitech University, Wisuda 2025, Galeri Wisuda, Mahasiswa, Alumni, Dokumentasi Wisuda">
-  <meta name="author" content="Digitech University">
-  <meta property="og:title" content="Wisuda III - Digitech University 2025">
-  <meta property="og:description" content="Galeri foto resmi Wisuda III Digitech University tahun 2025.">
-  <meta property="og:image" content="https://lukman73.github.io/wisuda-2025/foto01.jpg">
-  <meta property="og:url" content="https://lukman73.github.io/wisuda-2025">
-  <meta name="robots" content="index, follow">
-
   <title>Wisuda III - Digitech University</title>
   <style>
     html, body {
@@ -101,19 +92,20 @@
     }
 
     .slideshow-container {
-      width: 70%;
+      width: 100%;
       max-width: 900px;
       position: relative;
       border: 5px solid #ccc;
       border-radius: 10px;
       overflow: hidden;
       background-color: white;
+      box-sizing: border-box;
     }
 
     .slides {
-      display: none;
       width: 100%;
       height: auto;
+      display: none;
     }
 
     footer {
@@ -122,6 +114,27 @@
       text-align: center;
       padding: 15px;
       font-size: 14px;
+    }
+
+    /* Tambahan untuk responsif */
+    @media screen and (max-width: 600px) {
+      .header-text h1 {
+        font-size: 20px;
+      }
+
+      .header-text p {
+        font-size: 14px;
+      }
+
+      .marquee-text {
+        font-size: 12px;
+      }
+
+      .audio-player {
+        top: 10px;
+        right: 10px;
+        transform: scale(0.8);
+      }
     }
   </style>
 </head>
@@ -155,6 +168,7 @@
 
   <div class="content">
     <div class="slideshow-container">
+      <!-- Contoh beberapa foto -->
       <img class="slides" src="foto01.jpg" alt="Foto 1" />
       <img class="slides" src="foto02.jpg" alt="Foto 2" />
       <img class="slides" src="foto03.jpg" alt="Foto 3" />
@@ -200,6 +214,7 @@
       <img class="slides" src="foto043.jpg" alt="Foto 43" />
       <img class="slides" src="foto044.jpg" alt="Foto 44" />
       <img class="slides" src="foto045.jpg" alt="Foto 45" />
+      <!-- Tambahkan foto lainnya sesuai kebutuhan -->
     </div>
   </div>
 

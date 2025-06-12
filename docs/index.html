@@ -189,6 +189,7 @@
 
   <div class="content">
     <div class="slideshow-container">
+      <!-- Contoh beberapa foto -->
       <img class="slides" src="foto01.jpg" alt="Foto 1" />
       <img class="slides" src="foto02.jpg" alt="Foto 2" />
       <img class="slides" src="foto03.jpg" alt="Foto 3" />
@@ -234,11 +235,14 @@
       <img class="slides" src="foto043.jpg" alt="Foto 43" />
       <img class="slides" src="foto044.jpg" alt="Foto 44" />
       <img class="slides" src="foto045.jpg" alt="Foto 45" />
-      <!-- Lanjutkan sesuai kebutuhan -->
+      <!-- Lanjutkan foto lainnya sesuai kebutuhan -->
     </div>
   </div>
 
-  <footer>&copy; 2025</footer>
+  <footer>&copy; 2025 Digitech University</footer>
+
+  <!-- Suara letusan (opsional) -->
+  <audio id="popSound" src="pop.mp3" preload="auto"></audio>
 
   <script>
     // Slideshow
@@ -255,7 +259,7 @@
       setTimeout(showSlides, 3000);
     }
 
-    // Balon
+    // Balon naik
     function createBalloon() {
       const balloon = document.createElement('div');
       balloon.classList.add('balloon');
@@ -274,8 +278,36 @@
       return colors[Math.floor(Math.random() * colors.length)];
     }
 
-    setInterval(createBalloon, 700);
-  </script>
+    const balloonInterval = setInterval(createBalloon, 700);
 
+    // Balon meletus satu per satu setelah 1 menit
+    setTimeout(() => {
+      const balloons = Array.from(document.querySelectorAll('.balloon'));
+      let index = 0;
+
+      const burstInterval = setInterval(() => {
+        if (index >= balloons.length) {
+          clearInterval(burstInterval);
+          return;
+        }
+
+        const balloon = balloons[index];
+        if (balloon) {
+          balloon.style.transition = 'transform 0.3s ease-out, opacity 0.3s ease-out';
+          balloon.style.transform = 'scale(0)';
+          balloon.style.opacity = '0';
+          setTimeout(() => {
+            if (balloon.parentNode) balloon.remove();
+          }, 300);
+
+          // Mainkan suara letusan (jika tersedia)
+          const pop = document.getElementById("popSound");
+          if (pop) pop.play();
+        }
+
+        index++;
+      }, 1000);
+    }, 60000); // mulai setelah 60 detik
+  </script>
 </body>
 </html>

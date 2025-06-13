@@ -9,7 +9,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #e0e0e0;
+      background-color: #e0e0e0; /* abu-abu lembut */
       overflow-x: hidden;
     }
 
@@ -104,17 +104,12 @@
       background-color: white;
       box-sizing: border-box;
       overflow: hidden;
-      height: auto;
     }
 
     .slides {
-      position: absolute;
       width: 100%;
       height: auto;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
+      display: none;
     }
 
     footer {
@@ -209,77 +204,78 @@
 
   <div class="content">
     <div class="slideshow-container">
-      <!-- Ganti nama file sesuai yang Anda miliki -->
-      <img class="slides" src="foto01.jpg" />
-      <img class="slides" src="foto02.jpg" />
-      <img class="slides" src="foto03.jpg" />
-      <img class="slides" src="foto04.jpg" />
-      <img class="slides" src="foto05.jpg" />
-      <img class="slides" src="foto06.jpg" />
-      <img class="slides" src="foto07.jpg" />
-      <img class="slides" src="foto08.jpg" />
-      <img class="slides" src="foto09.jpg" />
-      <img class="slides" src="foto010.jpg" />
-      <img class="slides" src="foto011.jpg" />
-      <img class="slides" src="foto012.jpg" />
-      <img class="slides" src="foto013.jpg" />
-      <img class="slides" src="foto014.jpg" />
-      <img class="slides" src="foto015.jpg" />
-      <img class="slides" src="foto016.jpg" />
-      <img class="slides" src="foto017.jpg" />
-      <img class="slides" src="foto018.jpg" />
-      <img class="slides" src="foto019.jpg" />
-      <img class="slides" src="foto020.jpg" />
-      <img class="slides" src="foto021.jpg" />
-      <img class="slides" src="foto022.jpg" />
-      <img class="slides" src="foto023.jpg" />
-      <img class="slides" src="foto024.jpg" />
-      <img class="slides" src="foto025.jpg" />
-      <img class="slides" src="foto026.jpg" />
-      <img class="slides" src="foto027.jpg" />
-      <img class="slides" src="foto028.jpg" />
-      <img class="slides" src="foto029.jpg" />
-      <img class="slides" src="foto030.jpg" />
-      <img class="slides" src="foto031.jpg" />
-      <img class="slides" src="foto032.jpg" />
-      <img class="slides" src="foto033.jpg" />
-      <img class="slides" src="foto034.jpg" />
-      <img class="slides" src="foto035.jpg" />
-      <img class="slides" src="foto036.jpg" />
-      <img class="slides" src="foto037.jpg" />
-      <img class="slides" src="foto038.jpg" />
-      <img class="slides" src="foto039.jpg" />
-      <img class="slides" src="foto040.jpg" />
-      <img class="slides" src="foto041.jpg" />
-      <img class="slides" src="foto042.jpg" />
-      <img class="slides" src="foto043.jpg" />
-      <img class="slides" src="foto044.jpg" />
-      <img class="slides" src="foto045.jpg" />
+      <img class="slides" src="foto01.jpg" alt="Foto 1" />
+      <img class="slides" src="foto02.jpg" alt="Foto 2" />
+      <img class="slides" src="foto03.jpg" alt="Foto 3" />
+      <img class="slides" src="foto04.jpg" alt="Foto 4" />
+      <img class="slides" src="foto05.jpg" alt="Foto 5" />
+      <img class="slides" src="foto06.jpg" alt="Foto 6" />
+      <img class="slides" src="foto07.jpg" alt="Foto 7" />
+      <img class="slides" src="foto08.jpg" alt="Foto 8" />
+      <img class="slides" src="foto09.jpg" alt="Foto 9" />
+      <img class="slides" src="foto010.jpg" alt="Foto 10" />
+      <img class="slides" src="foto011.jpg" alt="Foto 11" />
+      <img class="slides" src="foto012.jpg" alt="Foto 12" />
+      <img class="slides" src="foto013.jpg" alt="Foto 13" />
+      <img class="slides" src="foto014.jpg" alt="Foto 14" />
+      <img class="slides" src="foto015.jpg" alt="Foto 15" />
+      <img class="slides" src="foto016.jpg" alt="Foto 16" />
+      <img class="slides" src="foto017.jpg" alt="Foto 17" />
+      <img class="slides" src="foto018.jpg" alt="Foto 18" />
+      <img class="slides" src="foto019.jpg" alt="Foto 19" />
+      <img class="slides" src="foto020.jpg" alt="Foto 20" />
+      <img class="slides" src="foto021.jpg" alt="Foto 21" />
+      <img class="slides" src="foto022.jpg" alt="Foto 22" />
+      <img class="slides" src="foto023.jpg" alt="Foto 23" />
+      <img class="slides" src="foto024.jpg" alt="Foto 24" />
+      <img class="slides" src="foto025.jpg" alt="Foto 25" />
+      <img class="slides" src="foto026.jpg" alt="Foto 26" />
+      <img class="slides" src="foto027.jpg" alt="Foto 27" />
+      <img class="slides" src="foto028.jpg" alt="Foto 28" />
+      <img class="slides" src="foto029.jpg" alt="Foto 29" />
+      <img class="slides" src="foto030.jpg" alt="Foto 30" />
+      <img class="slides" src="foto031.jpg" alt="Foto 31" />
+      <img class="slides" src="foto032.jpg" alt="Foto 32" />
+      <img class="slides" src="foto033.jpg" alt="Foto 33" />
+      <img class="slides" src="foto034.jpg" alt="Foto 34" />
+      <img class="slides" src="foto035.jpg" alt="Foto 35" />
+      <img class="slides" src="foto036.jpg" alt="Foto 36" />
+      <img class="slides" src="foto037.jpg" alt="Foto 37" />
+      <img class="slides" src="foto038.jpg" alt="Foto 38" />
+      <img class="slides" src="foto039.jpg" alt="Foto 39" />
+      <img class="slides" src="foto040.jpg" alt="Foto 40" />
+      <img class="slides" src="foto041.jpg" alt="Foto 41" />
+      <img class="slides" src="foto042.jpg" alt="Foto 42" />
+      <img class="slides" src="foto043.jpg" alt="Foto 43" />
+      <img class="slides" src="foto044.jpg" alt="Foto 44" />
+      <img class="slides" src="foto045.jpg" alt="Foto 45" />
     </div>
   </div>
 
   <footer>&copy; 2025 Digitech University</footer>
 
+  <!-- Logo kanan bawah -->
   <img src="let.png" alt="Logo Tambahan" class="logo-kanan-bawah" />
 
+  <!-- Suara letusan -->
   <audio id="popSound" src="pop.mp3" preload="auto"></audio>
 
   <script>
+    // Slideshow
     let slideIndex = 0;
-    const slides = document.getElementsByClassName("slides");
-
+    showSlides();
     function showSlides() {
+      const slides = document.getElementsByClassName("slides");
       for (let i = 0; i < slides.length; i++) {
-        slides[i].style.opacity = 0;
+        slides[i].style.display = "none";
       }
       slideIndex++;
       if (slideIndex > slides.length) slideIndex = 1;
-      slides[slideIndex - 1].style.opacity = 1;
+      slides[slideIndex - 1].style.display = "block";
       setTimeout(showSlides, 3000);
     }
 
-    showSlides();
-
+    // Balon naik
     function createBalloon() {
       const balloon = document.createElement('div');
       balloon.classList.add('balloon');
@@ -300,6 +296,7 @@
 
     const balloonInterval = setInterval(createBalloon, 700);
 
+    // Balon meletus setelah 1 menit
     setTimeout(() => {
       const balloons = Array.from(document.querySelectorAll('.balloon'));
       let index = 0;
